@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const CurrentBalance = ({balance, total_transactions, spents}) => {
+const CurrentBalance = ({ balance, total_transactions }) => {
   return (
     <div>
-        <p>Current Balance: $ {balance}</p>
-        <p>Total Transactions: {total_transactions}</p>
-        <p>Total Amount Spent: $ {spents}</p>
+      <p>Current Balance: $ {balance}</p>
+      <p>Total Transactions: {total_transactions}</p>
     </div>
-  )
-}
+  );
+};
 
-export  {CurrentBalance}
+export { CurrentBalance };

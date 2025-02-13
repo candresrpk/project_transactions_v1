@@ -1,0 +1,19 @@
+.Transaction {
+    width: 90%;
+    margin: 5px;
+    padding: 10px;
+
+    background-color: #504f4f;
+    border-radius: 5px;
+
+    list-style: none;
+
+    transition: .2s;
+}
+
+
+.Transaction:hover{
+
+    cursor: pointer;
+    background-color: #686666;
+}

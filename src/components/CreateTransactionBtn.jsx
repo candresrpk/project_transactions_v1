@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import "./CreateTransaction.css";
 
 const CreateTransactionBtn = () => {
-  return (
-    <div>Add</div>
-  )
-}
+  return <button className="createButton">Add</button>;
+};
 
-export {CreateTransactionBtn}
+export { CreateTransactionBtn };

@@ -1,12 +1,8 @@
-import React from 'react'
+import React from "react";
+import "./TransactionList.css";
 
+const TransactionList = ({ children }) => {
+  return <ul className="TransactionsList">{children}</ul>;
+};
 
-const TransactionList = ({children}) => {
-  return (
-    <ul>
-        {children}
-    </ul>
-  )
-}
-
-export  {TransactionList}
+export { TransactionList };

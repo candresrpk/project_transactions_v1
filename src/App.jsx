@@ -26,12 +26,13 @@ function App() {
       id: 3,
       description: "Payrroll",
       amount: 500.0,
-      type: "Income",
+      type: "income",
       date: "2025-01-15",
     },
   ];
 
   const [transactions, setTransactions] = useState(defaultTransactions);
+  const [search, setSearch] = useState("");
 
   const balance = transactions.reduce((acc, transaction) => {
     if (transaction.type === "expense") {
@@ -42,21 +43,43 @@ function App() {
 
   const total_transactions = transactions.length;
 
+  const SearchTransaction = (e) => {
+    setSearch(e.target.value);
+
+    if (e.target.value === "") {
+      setTransactions(defaultTransactions);
+    } else {
+      setTransactions(
+        transactions.filter((transaction) =>
+          transaction.description.toLowerCase().includes(e.target.value)
+        )
+      );
+    }
+  };
+
+  const deleteTransaction = (id) => {
+    setTransactions(
+      transactions.filter((transaction) => transaction.id !== id)
+    );
+  };
+
   return (
     <>
       <CurrentBalance
         balance={balance.toFixed(2)}
         total_transactions={total_transactions}
       />
-      <Search />
+      <Search search={search} SearchTransaction={SearchTransaction} />
       <TransactionList>
         {transactions.map((transaction) => (
           <Transaction
             key={transaction.id}
+            id={transaction.id}
             description={transaction.description}
             amount={transaction.amount}
             type={transaction.type}
             date={transaction.date}
+            deleteTransaction={deleteTransaction}
           />
         ))}
       </TransactionList>

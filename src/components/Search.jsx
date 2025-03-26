@@ -1,9 +1,15 @@
-import React from 'react'
+import "./search.css";
 
-const Search = () => {
+const Search = ({ search, SearchTransaction }) => {
   return (
-    <input type="text" placeholder='Which transactions would yo like to search: ' />
-  )
-}
+    <input
+      className="search"
+      type="text"
+      placeholder="Which transactions would yo like to search: "
+      onChange={SearchTransaction}
+      value={search}
+    />
+  );
+};
 
-export  {Search}
+export { Search };

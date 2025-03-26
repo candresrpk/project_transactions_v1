@@ -9,6 +9,8 @@
     list-style: none;
 
     transition: .2s;
+
+    position: relative;
 }
 
 
@@ -16,4 +18,40 @@
 
     cursor: pointer;
     background-color: #686666;
+}
+
+
+.expense{
+    background-color: #db59db;
+    color: #fff;
+}
+
+.expense:hover{
+    cursor: pointer;
+    background-color: #aa1faa;
+}
+
+.income{
+    background-color: #1faa1f;
+    color: #fff;
+}
+
+.income:hover{
+    cursor: pointer;
+    background-color: #6add6a;
+}
+
+
+.DeleteTransaction{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.DeleteTransaction:hover{
+    cursor: pointer;
+    color: red;
 }
